@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://dx2ek1w5fw6o8"]
+
+[ext_resource type="Texture2D" uid="uid://clc6e8cfhihg8" path="res://art/spritesheets/player_run_a.png" id="1_2e2aq"]
+[ext_resource type="Texture2D" uid="uid://cw4o8abae0yvg" path="res://art/spritesheets/player_run_b.png" id="2_p1qhy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n84mv"]
+atlas = ExtResource("1_2e2aq")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0lyl"]
+atlas = ExtResource("1_2e2aq")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7twm"]
+atlas = ExtResource("1_2e2aq")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74xtv"]
+atlas = ExtResource("1_2e2aq")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7p8ug"]
+atlas = ExtResource("2_p1qhy")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya5pw"]
+atlas = ExtResource("2_p1qhy")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eisxm"]
+atlas = ExtResource("2_p1qhy")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxgxu"]
+atlas = ExtResource("2_p1qhy")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2csvq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n84mv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0lyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7twm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74xtv")
+}],
+"loop": true,
+"name": &"a_run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7p8ug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya5pw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eisxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxgxu")
+}],
+"loop": true,
+"name": &"b_run",
+"speed": 5.0
+}]
+
+[node name="Player" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2csvq")
+animation = &"b_run"
+frame_progress = 0.585662
